@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Social Media Share
-Plugin URI: https://github.com/sintayehu-B/plugin_dev
+Plugin URI: https://github.com/sintayehu-B/Plugin_development_social_media
 Description: Displays Social Share icons below every post
 Version: 1.0.0
 Author: Sintayehu Sermessa
