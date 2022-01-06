@@ -64,3 +64,53 @@ function SocialMediaShare_settings()
     register_setting("SocialMediaShare_config_section", "SocialMediaShare-telegram");
 }
  
+// adding facebook checkbox
+
+function SocialMediaShare_facebook_checkbox()
+{  
+   ?>
+        <input type="checkbox" name="SocialMediaShare-facebook" value="1" <?php checked(1, get_option('SocialMediaShare-facebook'), true); ?> /> Check for Yes
+   <?php
+}
+
+// adding twitter checkbox
+
+function SocialMediaShare_twitter_checkbox()
+{  
+   ?>
+        <input type="checkbox" name="SocialMediaShare-twitter" value="1" <?php checked(1, get_option('SocialMediaShare-twitter'), true); ?> /> Check for Yes
+   <?php
+}
+
+// adding linkedin checkbox
+
+function SocialMediaShare_linkedin_checkbox()
+{  
+   ?>
+        <input type="checkbox" name="SocialMediaShare-linkedin" value="1" <?php checked(1, get_option('SocialMediaShare-linkedin'), true); ?> /> Check for Yes
+   <?php
+}
+
+// adding reddit_checkbox
+
+function SocialMediaShare_reddit_checkbox()
+{  
+   ?>
+        <input type="checkbox" name="SocialMediaShare-reddit" value="1" <?php checked(1, get_option('SocialMediaShare-reddit'), true); ?> /> Check for Yes
+   <?php
+}
+ 
+add_action("admin_init", "SocialMediaShare_settings");
+
+// adding telegram checkbox
+
+function SocialMediaShare_telegram_checkbox(){
+    ?>
+        <input type="checkbox" name="SocialMediaShare-telegram" value="1" <?php checked(1, get_option('SocialMediaShare-telegram'), true); ?> /> Check for Yes
+   <?php
+
+}
+
+add_action("admin_init", "SocialMediaShare_telegram_checkbox");
+
+// adding social media share icon
