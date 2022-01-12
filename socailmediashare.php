@@ -114,3 +114,53 @@ function SocialMediaShare_telegram_checkbox(){
 add_action("admin_init", "SocialMediaShare_telegram_checkbox");
 
 // adding social media share icon
+
+function add_SocialMediaShare_icons($content)
+{
+    $html = "<div class='SocialMediaShare-wrapper'><div class='share-on'>Share on: </div>";
+
+    global $post;
+
+    $url = get_permalink($post->ID);
+    $url = esc_url($url);
+
+    if(get_option("SocialMediaShare-facebook") == 1)
+    {
+        $html = $html . "<div class='facebook'><a target='_blank' href='http://www.facebook.com/sharer.php?u=" . $url . "'>Facebook</a></div>";
+    }
+
+    if(get_option("SocialMediaShare-twitter") == 1)
+    {
+        $html = $html . "<div class='twitter'><a target='_blank' href='https://twitter.com/share?url=" . $url . "'>Twitter</a></div>";
+    }
+
+    if(get_option("SocialMediaShare-linkedin") == 1)
+    {
+        $html = $html . "<div class='linkedin'><a target='_blank' href='http://www.linkedin.com/shareArticle?url=" . $url . "'>LinkedIn</a></div>";
+    }
+
+    if(get_option("SocialMediaShare-reddit") == 1)
+    {
+        $html = $html . "<div class='reddit'><a target='_blank' href='http://reddit.com/submit?url=" . $url . "'>Reddit</a></div>";
+    }
+    if(get_option("SocialMediaShare-telegram") == 1)
+    {
+        $html = $html . "<div class='telegram'><a target='_blank' href='http://t.me/submit?url=" . $url . "'>telegram</a></div>";
+    }
+
+    $html = $html . "<div class='clear'></div></div>";
+
+    return $content = $content . $html;
+}
+
+add_filter("the_content", "add_SocialMediaShare_icons");
+
+// connecting css file
+
+function social_media_share_style() 
+{
+    wp_register_style("social_media_share_style-file", plugin_dir_url(__FILE__) . "/css/style.css");
+    wp_enqueue_style("social_media_share_style-file");
+}
+
+add_action("wp_enqueue_scripts", "social_media_share_style");
