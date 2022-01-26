@@ -69,7 +69,7 @@ function SocialMediaShare_settings()
 function SocialMediaShare_facebook_checkbox()
 {  
    ?>
-        <input type="checkbox" name="SocialMediaShare-facebook" value="1" <?php checked(1, get_option('SocialMediaShare-facebook'), true); ?> /> Check for Yes
+        <input type="checkbox" name="SocialMediaShare-facebook" value="1" <?php checked(1, get_option('SocialMediaShare-facebook'), true); ?> /> Enable
    <?php
 }
 
@@ -78,7 +78,7 @@ function SocialMediaShare_facebook_checkbox()
 function SocialMediaShare_twitter_checkbox()
 {  
    ?>
-        <input type="checkbox" name="SocialMediaShare-twitter" value="1" <?php checked(1, get_option('SocialMediaShare-twitter'), true); ?> /> Check for Yes
+        <input type="checkbox" name="SocialMediaShare-twitter" value="1" <?php checked(1, get_option('SocialMediaShare-twitter'), true); ?> /> Enable
    <?php
 }
 
@@ -87,7 +87,7 @@ function SocialMediaShare_twitter_checkbox()
 function SocialMediaShare_linkedin_checkbox()
 {  
    ?>
-        <input type="checkbox" name="SocialMediaShare-linkedin" value="1" <?php checked(1, get_option('SocialMediaShare-linkedin'), true); ?> /> Check for Yes
+        <input type="checkbox" name="SocialMediaShare-linkedin" value="1" <?php checked(1, get_option('SocialMediaShare-linkedin'), true); ?> /> Enable
    <?php
 }
 
@@ -96,7 +96,7 @@ function SocialMediaShare_linkedin_checkbox()
 function SocialMediaShare_reddit_checkbox()
 {  
    ?>
-        <input type="checkbox" name="SocialMediaShare-reddit" value="1" <?php checked(1, get_option('SocialMediaShare-reddit'), true); ?> /> Check for Yes
+        <input type="checkbox" name="SocialMediaShare-reddit" value="1" <?php checked(1, get_option('SocialMediaShare-reddit'), true); ?> /> Enable
    <?php
 }
  
@@ -106,7 +106,7 @@ add_action("admin_init", "SocialMediaShare_settings");
 
 function SocialMediaShare_telegram_checkbox(){
     ?>
-        <input type="checkbox" name="SocialMediaShare-telegram" value="1" <?php checked(1, get_option('SocialMediaShare-telegram'), true); ?> /> Check for Yes
+        <input type="checkbox" name="SocialMediaShare-telegram" value="1" <?php checked(1, get_option('SocialMediaShare-telegram'), true); ?> /> Enable
    <?php
 
 }
