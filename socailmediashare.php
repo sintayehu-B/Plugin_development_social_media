@@ -8,7 +8,7 @@ Version: 1.0.0
 Author: Sintayehu Sermessa
 Author URI : https://github.com/sintayehu-B
 */
-
+//  denying direct access to the php file 
 defined('ABSPATH') or die("The plugin you trying to access is not here bro :) ");
 
 if(!defined('ABSPATH')){
@@ -126,7 +126,7 @@ function add_SocialMediaShare_icons($content)
 
     if(get_option("SocialMediaShare-facebook") == 1)
     {
-        $html = $html . "<div class='facebook'><a target='_blank' href='http://www.facebook.com/sharer.php?u=" . $url . "'>Facebook</a></div>";
+        $html = $html . "<div class='facebook'><a target='_blank' href='http://www.facebook.com/sharer.php?u=<URL>&p[title]=<TITLE>" . $url . "'>Facebook</a></div>";
     }
 
     if(get_option("SocialMediaShare-twitter") == 1)
@@ -136,7 +136,7 @@ function add_SocialMediaShare_icons($content)
 
     if(get_option("SocialMediaShare-linkedin") == 1)
     {
-        $html = $html . "<div class='linkedin'><a target='_blank' href='http://www.linkedin.com/shareArticle?url=" . $url . "'>LinkedIn</a></div>";
+        $html = $html . "<div class='linkedin'><a target='_blank' href='https://www.linkedin.com/shareArticle?mini=true&url=" . $url . "'>LinkedIn</a></div>";
     }
 
     if(get_option("SocialMediaShare-reddit") == 1)
@@ -145,7 +145,7 @@ function add_SocialMediaShare_icons($content)
     }
     if(get_option("SocialMediaShare-telegram") == 1)
     {
-        $html = $html . "<div class='telegram'><a target='_blank' href='http://t.me/submit?url=" . $url . "'>telegram</a></div>";
+        $html = $html . "<div class='telegram'><a target='_blank' href='https://telegram.me/share/url?url=<URL>" . $url . "'>telegram</a></div>";
     }
 
     $html = $html . "<div class='clear'></div></div>";
