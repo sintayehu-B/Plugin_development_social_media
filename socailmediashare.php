@@ -56,12 +56,14 @@ function SocialMediaShare_settings()
     add_settings_field("SocialMediaShare-linkedin", "Do you want to display LinkedIn share button?", "SocialMediaShare_linkedin_checkbox", "SocialMediaShare", "SocialMediaShare_config_section");
     add_settings_field("SocialMediaShare-reddit", "Do you want to display Reddit share button?", "SocialMediaShare_reddit_checkbox", "SocialMediaShare", "SocialMediaShare_config_section");
     add_settings_field("SocialMediaShare-telegram", "Do you want to display Telegram share button?", "SocialMediaShare_telegram_checkbox", "SocialMediaShare", "SocialMediaShare_config_section");
+    add_settings_field("SocialMediaShare-instagram", "Do you want to display instagram share button?", "SocialMediaShare_instagram_checkbox", "SocialMediaShare", "SocialMediaShare_config_section");
  
     register_setting("SocialMediaShare_config_section", "SocialMediaShare-facebook");
     register_setting("SocialMediaShare_config_section", "SocialMediaShare-twitter");
     register_setting("SocialMediaShare_config_section", "SocialMediaShare-linkedin");
     register_setting("SocialMediaShare_config_section", "SocialMediaShare-reddit");
     register_setting("SocialMediaShare_config_section", "SocialMediaShare-telegram");
+    register_setting("SocialMediaShare_config_section", "SocialMediaShare-instagram");
 }
  
 // adding facebook checkbox
@@ -113,6 +115,17 @@ function SocialMediaShare_telegram_checkbox(){
 
 add_action("admin_init", "SocialMediaShare_telegram_checkbox");
 
+// adding instagram checkbox
+
+function SocialMediaShare_instagram_checkbox(){
+    ?>
+        <input type="checkbox" name="SocialMediaShare-instagram" value="1" <?php checked(1, get_option('SocialMediaShare-instagram'), true); ?> /> Enable
+   <?php
+
+}
+
+add_action("admin_init", "SocialMediaShare_instagram_checkbox");
+
 // adding social media share icon
 
 function add_SocialMediaShare_icons($content)
@@ -126,26 +139,31 @@ function add_SocialMediaShare_icons($content)
 
     if(get_option("SocialMediaShare-facebook") == 1)
     {
-        $html = $html . "<div class='facebook'><a target='_blank' href='http://www.facebook.com/sharer.php?u=<URL>&p[title]=<TITLE>" . $url . "'>Facebook</a></div>";
+        $html = $html . "<div class='facebook'><a target='_blank' href='http://www.facebook.com/sharer.php?u=<URL>&p[title]=<TITLE>" . $url . "'><i class='fab fa-facebook'></i> </a></div>";
     }
 
     if(get_option("SocialMediaShare-twitter") == 1)
     {
-        $html = $html . "<div class='twitter'><a target='_blank' href='https://twitter.com/share?url=" . $url . "'>Twitter</a></div>";
+        $html = $html . "<div class='twitter'><a target='_blank' href='https://twitter.com/share?url=" . $url . "'><i class='fab fa-twitter'></i></a></div>";
     }
 
     if(get_option("SocialMediaShare-linkedin") == 1)
     {
-        $html = $html . "<div class='linkedin'><a target='_blank' href='https://www.linkedin.com/shareArticle?mini=true&url=" . $url . "'>LinkedIn</a></div>";
+        $html = $html . "<div class='linkedin'><a target='_blank' href='https://www.linkedin.com/shareArticle?mini=true&url=" . $url . "'> <i class='fab fa-linkedin-in'></i></a></div>";
     }
 
     if(get_option("SocialMediaShare-reddit") == 1)
     {
-        $html = $html . "<div class='reddit'><a target='_blank' href='http://reddit.com/submit?url=" . $url . "'>Reddit</a></div>";
+        $html = $html . "<div class='reddit'><a target='_blank' href='http://reddit.com/submit?url=" . $url . "'><i class='fab fa-reddit-alien'></i></a></div>";
     }
     if(get_option("SocialMediaShare-telegram") == 1)
     {
-        $html = $html . "<div class='telegram'><a target='_blank' href='https://telegram.me/share/url?url=<URL>" . $url . "'>telegram</a></div>";
+        $html = $html . "<div class='telegram'><a target='_blank' href='https://telegram.me/share/url?url=<URL>" . $url . "'><i class='fab fa-telegram-plane'></i></a></div>";
+    }
+    if(get_option("SocialMediaShare-instagram") == 1)
+    {
+        $html = $html . "<div class='instagram'><a target='_blank' href='https://www.instagram.com/sharer.php?u={{url()->current()}}" . $url . "'> <i class='fab fa-instagram'></i> </div>";
+        // <a class="fb-share" href="https://www.instagram.com/sharer.php?u={{url()->current()}}"><i class="social_facebook"></i> Share</a>
     }
 
     $html = $html . "<div class='clear'></div></div>";
@@ -160,6 +178,8 @@ add_filter("the_content", "add_SocialMediaShare_icons");
 function social_media_share_style() 
 {
     wp_register_style("social_media_share_style-file", plugin_dir_url(__FILE__) . "/css/style.css");
+    wp_register_style("social_media_share_style-file", plugin_dir_url(__FILE__) . "/css/font-awesome/css/font-awesome.css");
+    
     wp_enqueue_style("social_media_share_style-file");
 }
 
