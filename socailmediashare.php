@@ -139,7 +139,7 @@ function add_SocialMediaShare_icons($content)
 
     if(get_option("SocialMediaShare-facebook") == 1)
     {
-        $html = $html . "<div class='facebook'><a target='_blank' href='http://www.facebook.com/sharer.php?u=<URL>&p[title]=<TITLE>" . $url . "'><i class='fab fa-facebook'></i> </a></div>";
+        $html = $html . "<div class='facebook'><a target='_blank' href='http://www.facebook.com/sharer.php?u=" . $url . "'><i class='fab fa-facebook'></i> </a></div>";
     }
 
     if(get_option("SocialMediaShare-twitter") == 1)
@@ -162,8 +162,8 @@ function add_SocialMediaShare_icons($content)
     }
     if(get_option("SocialMediaShare-instagram") == 1)
     {
-        $html = $html . "<div class='instagram'><a target='_blank' href='https://www.instagram.com/sharer.php?u={{url()->current()}}" . $url . "'> <i class='fab fa-instagram'></i> </div>";
-        // <a class="fb-share" href="https://www.instagram.com/sharer.php?u={{url()->current()}}"><i class="social_facebook"></i> Share</a>
+        $html = $html . "<div class='instagram'><a target='_blank' href='http://instagram.com/share/url?url=<URL>" . $url . "'> <i class='fab fa-instagram'></i> </div>";
+        
     }
 
     $html = $html . "<div class='clear'></div></div>";

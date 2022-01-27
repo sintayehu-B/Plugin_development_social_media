@@ -1,4 +1,3 @@
-
 .SocialMediaShare-wrapper div {
   float: left;
   margin-right: 10px;
@@ -10,48 +9,59 @@
 }
 
 .SocialMediaShare-wrapper div.facebook {
-  background-color: #3a5795;
+  /* background-color: #3a5795; */
   padding: 5px;
 }
 
 .SocialMediaShare-wrapper div.facebook a {
-  color: white;
+  color: #3a5795;
 }
 
 .SocialMediaShare-wrapper div.twitter {
-  background-color: #55acee;
+  /* background-color: #55acee; */
   padding: 5px;
 }
 
 .SocialMediaShare-wrapper div.twitter a {
-  color: white;
+  color: #55acee;
 }
 
 .SocialMediaShare-wrapper div.linkedin {
-  background-color: #007bb6;
+  /* background-color: #007bb6; */
   padding: 5px;
 }
 
 .SocialMediaShare-wrapper div.linkedin a {
-  color: white;
+  color: #007bb6;
 }
 
 .SocialMediaShare-wrapper div.reddit {
-  background-color: #e44934;
+  /* background-color: #e44934; */
   padding: 5px;
 }
 
 .SocialMediaShare-wrapper div.reddit a {
-  color: white;
+  color: #e44934;
 }
 
 .SocialMediaShare-wrapper div.telegram {
-  background-color: #55acee;
+  /* background-color: #55acee; */
   padding: 5px;
 }
 
 .SocialMediaShare-wrapper div.telegram a {
-  color: white;
+  color: #55acee;
+}
+
+.SocialMediaShare-wrapper div.instagram {
+  /* background-color: #55acee; */
+  padding: 5px;
+}
+
+.SocialMediaShare-wrapper div.instagram a {
+  color: rgb(196, 107, 107);
+  width: 32px;
+  height: 32px;
 }
 .SocialMediaShare-wrapper div a {
   text-decoration: none;
